@@ -1,0 +1,75 @@
+// Online C compiler to run C program online
+/*Linked list:Linked list is also is collection of homogenious of node
+but you know what is the major diffence between arrary and linked list both are storing data but in the array we can change the size of array at run time but in the linked list we can change the size of linked list at the runtime*/
+#include <stdio.h>
+#include<stdlib.h>
+/* any node consist two feild first is information(means actual data) and second is address of subsequence node and it is called link or pointer*/
+struct node{
+    int info;
+    struct node *link;
+};
+struct node *START=NULL;
+struct node* createNode(){
+    struct node *n;
+    n=(struct node*)malloc(sizeof(struct node));
+    return(n);
+}
+void insertnode()
+{
+    struct node *temp;
+    struct node *t;
+    temp=createNode();
+    printf("enter a number\n");
+    scanf("%d",&temp->info);
+    temp->link=NULL;
+    if(START==NULL)
+    {
+        START=temp;
+    }
+    else
+    {
+      t=START;
+      while(t->link!=NULL)
+      t=t->link;
+      t->link=temp;
+    }
+}
+void traverse()
+    {
+        struct node *temp;
+        temp=START;
+        if(temp==NULL)
+        {
+            printf("list is empty");
+        }
+        else{
+            printf("printing values is....");
+            while(temp!=NULL)
+            {
+                printf("%d\n",temp->info);
+                temp=temp->link;
+            }
+        }
+    
+    }
+
+int main() {
+    
+    int choice;
+    choice=3;
+    while(1){
+    printf("enter your choice\n 1.insert\n 2.traverse \n 3.exit\n");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        
+    case 1:insertnode();
+    break;
+    case 2:traverse();
+    break;
+    case 3:exit(0);
+    }
+    }
+    
+    return 0;
+}
