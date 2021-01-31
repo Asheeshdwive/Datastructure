@@ -1,4 +1,4 @@
-// Online C compiler to run C program online
+
 /*Linked list:Linked list is also is collection of homogenious of node
 but you know what is the major diffence between arrary and linked list both are storing data but in the array we can change the size of array at run time but in the linked list we can change the size of linked list at the runtime*/
 #include <stdio.h>
